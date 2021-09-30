@@ -1,0 +1,178 @@
+ Code_Projects/Python_Code/python_challenge $ ./run.sh 
+##############################
+#### Configure Interfaces ####
+##############################
+INFO:root:Render interface config from YAML vars for csr1
+INFO:root:Returning rendered config
+INFO:root:Configure interfaces on csr1
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr1 Diff ##########
+##############################
++interface GigabitEthernet4
++  ip address 10.10.12.1 255.255.255.252
++  description Link to csr2
+-  no shutdown
++interface GigabitEthernet2
++  ip address 10.10.13.1 255.255.255.248
++  description Link to csr3
+-  no shutdown
+INFO:root:Committing config to csr1
+INFO:root:Close connection with csr1
+INFO:root:Render interface config from YAML vars for csr2
+INFO:root:Returning rendered config
+INFO:root:Configure interfaces on csr2
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr2 Diff ##########
+##############################
++interface GigabitEthernet3
++  ip address 10.10.23.2 255.255.255.248
++  description Link to csr3
+-  no shutdown
++interface GigabitEthernet4
++  ip address 10.10.12.2 255.255.255.252
++  description Link to csr1
+-  no shutdown
+INFO:root:Committing config to csr2
+INFO:root:Close connection with csr2
+INFO:root:Render interface config from YAML vars for csr3
+INFO:root:Returning rendered config
+INFO:root:Configure interfaces on csr3
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr3 Diff ##########
+##############################
++interface GigabitEthernet2
++  ip address 10.10.13.3 255.255.255.248
++  description Link to csr1
+-  no shutdown
++interface GigabitEthernet3
++  ip address 10.10.23.3 255.255.255.248
++  description Link to csr2
+-  no shutdown
+INFO:root:Committing config to csr3
+INFO:root:Close connection with csr3
+##############################
+#### Validate Interfaces #####
+##############################
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces LLDP
+INFO:root:Verify interface compliance for csr1
+INFO:root:csr1 interfaces in compliance
+INFO:root:csr1 interface validation passed
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces LLDP
+INFO:root:Verify interface compliance for csr2
+INFO:root:csr2 interfaces in compliance
+INFO:root:csr2 interface validation passed
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces LLDP
+INFO:root:Verify interface compliance for csr3
+INFO:root:csr3 interfaces in compliance
+INFO:root:csr3 interface validation passed
+##############################
+####### Configure BGP ########
+##############################
+INFO:root:Render BGP config from YAML vars for csr1
+INFO:root:Returning rendered config
+INFO:root:Configure BGP on csr1
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr1 Diff ##########
+##############################
+
+INFO:root:Committing config to csr1
+INFO:root:Close connection with csr1
+INFO:root:Render BGP config from YAML vars for csr2
+INFO:root:Returning rendered config
+INFO:root:Configure BGP on csr2
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr2 Diff ##########
+##############################
+
+INFO:root:Committing config to csr2
+INFO:root:Close connection with csr2
+INFO:root:Render BGP config from YAML vars for csr3
+INFO:root:Returning rendered config
+INFO:root:Configure BGP on csr3
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Loading config to csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+##############################
+######### csr3 Diff ##########
+##############################
+
+INFO:root:Committing config to csr3
+INFO:root:Close connection with csr3
+##############################
+######## Validate BGP ########
+##############################
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr1
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces BGP
+INFO:root:Verify bgp compliance for csr1
+INFO:root:csr1 bgp in compliance
+INFO:root:csr1 bgp validation passed
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr2
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces BGP
+INFO:root:Verify bgp compliance for csr2
+INFO:root:csr2 bgp in compliance
+INFO:root:csr2 bgp validation passed
+INFO:root:Set NAPALM driver to ios
+INFO:root:Connecting to host csr3
+INFO:paramiko.transport:Connected (version 1.99, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Get compliance report for interfaces BGP
+INFO:root:Verify bgp compliance for csr3
+INFO:root:csr3 bgp in compliance
+INFO:root:csr3 bgp validation passed
